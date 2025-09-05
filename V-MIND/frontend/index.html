@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmind - Your AI Learning Copilot</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Space background with Canvas -->
+    <div class="stars-bg">
+        <canvas id="space"></canvas>
+    </div>
+
+    <!-- Floating Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Vmind</span>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="nav-button" id="loginBtn">
+                    <span class="button-text">Login</span>
+                </a>
+                <a href="register.html" class="nav-button primary" id="registerBtn">
+                    <span class="button-text">Sign Up</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation Indicators -->
+    <div class="scroll-indicators">
+        <div class="scroll-dot active" data-section="0"></div>
+        <div class="scroll-dot" data-section="1"></div>
+        <div class="scroll-dot" data-section="2"></div>
+        <div class="scroll-dot" data-section="3"></div>
+        <div class="scroll-dot" data-section="4"></div>
+        <div class="scroll-dot" data-section="5"></div>
+    </div>
+
+    <!-- Section 1: The Journey Begins -->
+    <section id="intro" class="section intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h1 class="main-title">
+                        Ready to Launch Towards Your <span class="highlight">Own Goals</span>?
+                    </h1>
+                    <p class="main-subtitle">
+                        In a universe of noise and distractions, sometimes the hardest thing is simply to start. 
+                        Chart your own path.
+                    </p>
+                </div>
+                
+                <button class="cta-button primary" id="exploreBtn">
+                    <span class="button-text">Start Exploration</span>
+                    <div class="button-glow"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: The Battle for Your Attention -->
+    <section id="problem" class="section problem-section">
+        <div class="container">
+            <div class="problem-content">
+                <h2 class="section-title">Your Purpose vs. The Noise</h2>
+                <p class="section-text">
+                    The world is designed to consume your attention, to drain your dopamine and leave you overwhelmed. 
+                    Maintaining focus on what really matters has become a daily battle.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Science and Gaming at Your Service -->
+    <section id="solution" class="section solution-section">
+        <div class="container">
+            <div class="solution-content">
+                <h2 class="section-title">
+                    <span class="highlight">Gamification</span> is the Key.
+                </h2>
+                <p class="section-text">
+                    It's not a trick. <strong>Gamification</strong> is scientifically proven as a method to increase motivation, 
+                    focus and knowledge retention. Vmind helps you hack your own brain.
+                </p>
+                
+                                 <div class="roadmap-container">
+                     <div class="central-planet" id="pythonPlanet">
+                         <div class="planet-glow"></div>
+                         <div class="planet-content">
+                             <img src="assets/ui_elements/planeta1.png" alt="Python Planet" class="planet-image">
+                             <span class="planet-text">Python</span>
+                         </div>
+                     </div>
+                     
+                     <div class="side-planet left-planet" id="databasePlanet">
+                         <div class="planet-glow"></div>
+                         <div class="planet-content">
+                             <img src="assets/ui_elements/planeta2.png" alt="Database Planet" class="planet-image">
+                             <span class="planet-text">Databases</span>
+                         </div>
+                     </div>
+                     
+                     <div class="side-planet right-planet" id="tailwindPlanet">
+                         <div class="planet-glow"></div>
+                         <div class="planet-content">
+                             <img src="assets/ui_elements/planeta3.png" alt="Tailwind Planet" class="planet-image">
+                             <span class="planet-text">Tailwind</span>
+                         </div>
+                     </div>
+                 </div>
+
+                <!-- Python Concept Map Modal -->
+                <div class="concept-map-modal" id="pythonModal">
+                    <div class="modal-backdrop"></div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Concept Map: Python</h3>
+                            <button class="modal-close" id="closePythonModal">×</button>
+                        </div>
+                        <div class="concept-map-container">
+                            <!-- Connection lines -->
+                            <svg class="connection-lines" width="100%" height="100%">
+                                <defs>
+                                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#5D3FD3;stop-opacity:0.6" />
+                                        <stop offset="50%" style="stop-color:#FF6EC7;stop-opacity:0.8" />
+                                        <stop offset="100%" style="stop-color:#3AB0FF;stop-opacity:0.6" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Lines will be drawn dynamically with JavaScript -->
+                            </svg>
+                            
+                            <!-- Concept map nodes -->
+                            <div class="concept-node" data-topic="fundamentals" style="top: 20%; left: 50%;">
+                                <div class="node-planet">
+                                    <img src="assets/ui_elements/planeta1.png" alt="Fundamentals" class="node-planet-image">
+                                </div>
+                                <div class="node-label">Fundamentals</div>
+                            </div>
+                            
+                            <div class="concept-node" data-topic="data-structures" style="top: 15%; left: 25%;">
+                                <div class="node-planet">
+                                    <img src="assets/ui_elements/planeta2.png" alt="Data Structures" class="node-planet-image">
+                                </div>
+                                <div class="node-label">Data Structures</div>
+                            </div>
+                            
+                            <div class="concept-node" data-topic="functions" style="top: 15%; left: 75%;">
+                                <div class="node-planet">
+                                    <img src="assets/ui_elements/planeta3.png" alt="Functions" class="node-planet-image">
+                                </div>
+                                <div class="node-label">Functions</div>
+                            </div>
+                            
+                            <div class="concept-node" data-topic="oop" style="top: 50%; left: 20%;">
+                                <div class="node-planet">
+                                    <img src="assets/ui_elements/planeta4.png" alt="OOP" class="node-planet-image">
+                                </div>
+                                <div class="node-label">OOP</div>
+                            </div>
+                            
+                            <div class="concept-node" data-topic="modules" style="top: 50%; left: 80%;">
+                                <div class="node-planet">
+                                    <img src="assets/ui_elements/planeta1.png" alt="Modules" class="node-planet-image">
+                                </div>
+                                <div class="node-label">Modules</div>
+                            </div>
+                            
+                            <div class="concept-node" data-topic="web" style="top: 80%; left: 30%;">
+                                <div class="node-planet">
+                                    <img src="assets/ui_elements/planeta2.png" alt="Web Development" class="node-planet-image">
+                                </div>
+                                <div class="node-label">Web Development</div>
+                            </div>
+                            
+                            <div class="concept-node" data-topic="data-science" style="top: 80%; left: 70%;">
+                                <div class="node-planet">
+                                    <img src="assets/ui_elements/planeta3.png" alt="Data Science" class="node-planet-image">
+                                </div>
+                                <div class="node-label">Data Science</div>
+                            </div>
+                            
+                            <div class="concept-node" data-topic="automation" style="top: 65%; left: 50%;">
+                                <div class="node-planet">
+                                    <img src="assets/ui_elements/planeta4.png" alt="Automation" class="node-planet-image">
+                                </div>
+                                <div class="node-label">Automation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: A Framework for Your Mind -->
+    <section id="gamification" class="section gamification-section">
+        <div class="container">
+            <div class="gamification-content">
+                <h2 class="section-title">Vmind gives you the <span class="highlight">map and the ship</span>.</h2>
+                <p class="section-text">
+                    We don't drown you with infinite resources. We give you the <strong>holistic framework</strong> to achieve any learning goal you set for yourself. 
+                    Every step you take is a new planet you explore and a new achievement you conquer.
+                </p>
+                
+                                 <div class="progress-container">
+                     <div class="rocket-journey fade-in-up">
+                         <div class="journey-track">
+                             <div class="rocket-progress" id="rocketProgress">
+                                 <img src="assets/ui_elements/elemento5.png" alt="Rocket" class="rocket-image">
+                                 <div class="progress-number" id="progressNumber">0%</div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Never Travel Alone -->
+    <section id="social" class="section social-section">
+        <div class="container">
+            <div class="social-content">
+                <h2 class="section-title">Your Journey, in <span class="highlight">Community</span>.</h2>
+                <p class="section-text">
+                    Be part of a fleet of explorers with your same vision. Inspire and watch how you grow together with a community. 
+                    Streaks and leaderboards are not a competition, they are a boost to keep the engine running.
+                </p>
+                
+                <div class="community-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">2,847</div>
+                        <div class="stat-label">Active explorers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">Average streak</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">89%</div>
+                        <div class="stat-label">Success rate</div>
+                    </div>
+                </div>
+                
+                <div class="leaderboard-container">
+                    <h3 class="leaderboard-title">🏆 Galactic Fleet</h3>
+                    <div class="leaderboard">
+                        <div class="leaderboard-item current-user">
+                            <span class="rank">#1</span>
+                            <span class="username">@your_user</span>
+                            <span class="score">2,450 pts</span>
+                        </div>
+                        <div class="leaderboard-item">
+                            <span class="rank">#2</span>
+                            <span class="username">@explorer_pro</span>
+                            <span class="score">2,100 pts</span>
+                        </div>
+                        <div class="leaderboard-item">
+                            <span class="rank">#3</span>
+                            <span class="username">@conqueror</span>
+                            <span class="score">1,850 pts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Your Purpose Awaits You -->
+    <section id="conclusion" class="section conclusion-section">
+        <div class="container">
+            <div class="conclusion-content">
+                <h2 class="section-title">
+                    This is the moment to <span class="highlight">take off</span>.
+                </h2>
+                <p class="section-text">
+                    Vmind gives you the path and structure to achieve your goals. 
+                    The universe of possibilities awaits you.
+                </p>
+                
+                <button class="cta-button final" id="finalCtaBtn">
+                    <span class="button-text">Start your adventure for free!</span>
+                    <div class="button-glow"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Concept Map Modal -->
+    <div class="concept-map-modal" id="databaseModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🌌 Concept Map: Databases</h3>
+                <button class="modal-close" id="closeDatabaseModal">×</button>
+            </div>
+            <div class="concept-map-container">
+                <svg class="connection-lines" width="100%" height="100%">
+                    <defs>
+                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#3AB0FF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF6EC7;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                
+                <div class="concept-node" data-topic="fundamentals" style="top: 20%; left: 50%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta1.png" alt="Fundamentals" class="node-planet-image">
+                    </div>
+                    <div class="node-label">DB Fundamentals</div>
+                </div>
+                
+                <div class="concept-node" data-topic="sql" style="top: 15%; left: 25%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta2.png" alt="SQL" class="node-planet-image">
+                    </div>
+                    <div class="node-label">SQL</div>
+                </div>
+                
+                <div class="concept-node" data-topic="nosql" style="top: 15%; left: 75%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta3.png" alt="NoSQL" class="node-planet-image">
+                    </div>
+                    <div class="node-label">NoSQL</div>
+                </div>
+                
+                <div class="concept-node" data-topic="design" style="top: 50%; left: 20%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta4.png" alt="Design" class="node-planet-image">
+                    </div>
+                    <div class="node-label">DB Design</div>
+                </div>
+                
+                <div class="concept-node" data-topic="optimization" style="top: 50%; left: 80%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta1.png" alt="Optimization" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Optimization</div>
+                </div>
+                
+                <div class="concept-node" data-topic="security" style="top: 80%; left: 30%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta2.png" alt="Security" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Security</div>
+                </div>
+                
+                <div class="concept-node" data-topic="backup" style="top: 80%; left: 70%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta3.png" alt="Backup" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Backup & Recovery</div>
+                </div>
+                
+                <div class="concept-node" data-topic="cloud" style="top: 65%; left: 50%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta4.png" alt="Cloud" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Cloud DB</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tailwind CSS Concept Map Modal -->
+    <div class="concept-map-modal" id="tailwindModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🌌 Concept Map: Tailwind CSS</h3>
+                <button class="modal-close" id="closeTailwindModal">×</button>
+            </div>
+            <div class="concept-map-container">
+                <svg class="connection-lines" width="100%" height="100%">
+                    <defs>
+                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#3AB0FF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF6EC7;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                
+                <div class="concept-node" data-topic="fundamentals" style="top: 20%; left: 50%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta1.png" alt="Fundamentals" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Fundamentals</div>
+                </div>
+                
+                <div class="concept-node" data-topic="utilities" style="top: 15%; left: 25%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta2.png" alt="Utilities" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Utilities</div>
+                </div>
+                
+                <div class="concept-node" data-topic="layout" style="top: 15%; left: 75%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta3.png" alt="Layout" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Layout & Grid</div>
+                </div>
+                
+                <div class="concept-node" data-topic="components" style="top: 50%; left: 20%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta4.png" alt="Components" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Components</div>
+                </div>
+                
+                <div class="concept-node" data-topic="responsive" style="top: 50%; left: 80%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta1.png" alt="Responsive" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Responsive Design</div>
+                </div>
+                
+                <div class="concept-node" data-topic="customization" style="top: 80%; left: 30%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta2.png" alt="Customization" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Customization</div>
+                </div>
+                
+                <div class="concept-node" data-topic="plugins" style="top: 80%; left: 70%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta3.png" alt="Plugins" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Plugins</div>
+                </div>
+                
+                <div class="concept-node" data-topic="production" style="top: 65%; left: 50%;">
+                    <div class="node-planet">
+                        <img src="assets/ui_elements/planeta4.png" alt="Production" class="node-planet-image">
+                    </div>
+                    <div class="node-label">Production</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
